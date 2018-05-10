@@ -11,13 +11,12 @@ import logo from './images/logo.png';
 //     event.target.reset();
 // };
 
-let RegisterScreen = (props) =>
+let RegisterScreen = ({props}) =>
 <View style={styles.container}>
         <Image 
         source={logo}
         style={styles.logo}
         />
-        <Text style={styles.text}>Create Account</Text>
         <TextInput 
             style={styles.field}
             placeholder='Email Address'/>
@@ -42,13 +41,6 @@ let RegisterScreen = (props) =>
           color="#841584"
           onPress={() => submitUserLoginInformation()}
         />
-
-        <Button
-            style={styles.button}
-          title="Go to Home"
-          color="#841584"
-          onPress={() => props.navigation.navigate('Home')}
-        />
     </View>
 
 const styles = StyleSheet.create({
@@ -57,10 +49,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
-      },
-      text: {
-          fontSize: 20,
-          fontWeight: 'bold'
       },
        field: {
          height: 40, 
@@ -79,7 +67,7 @@ const styles = StyleSheet.create({
            justifyContent: 'center',
        },
        logo: {
-           marginBottom: 30,
+           marginBottom: 50,
        },
        font: {
           fontSize: 15,

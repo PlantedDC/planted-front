@@ -1,32 +1,84 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { StyleSheet, TextInput, Text, View, Button, Image } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import logo from './images/logo.png';
+import { connect } from 'react-redux';
+import {submitUserLoginInformation} from './helperFunctions/Login';
+import {updateUserObject, updateIsUserLoggedIn} from '../actions';
 
-let submitUserLoginInformation = (props) => {
-    console.log(props);
-    // let email = event.target.email.value;
-    // let password = event.target.password.value;
-    // console.log(email, password)
-    // event.target.reset();
-};
+class LoginScreenDumb extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { email: '', password: '' };
+      }
 
-let LoginScreen = (props) =>
-    <View style={styles.container}>
+    render() {
+        let {navigation, dispatch} = this.props;
+        let {email, password} = this.state;
+
+        let loginUser = () => {
+            submitUserLoginInformation(email, password)
+            .then(res => dispatch(updateUserObject(res)))
+            .then(dispatch(updateIsUserLoggedIn()))
+            .then(this.setState({email: '', password: ''}))
+            .then(navigation.navigate('Home'))
+        }
+
+        const styles = StyleSheet.create({
+            container: {
+              flex: 1,
+              backgroundColor: '#fff',
+              alignItems: 'center',
+              justifyContent: 'center',
+            },
+            button: {
+                width: 200,
+                height: 50,
+                backgroundColor: '#077C4A',
+                alignItems: 'center',
+                justifyContent: 'center',
+            },
+             field: {
+               height: 40, 
+               width: 300,
+               marginBottom: 20,
+               borderColor: 'gray', 
+               borderWidth: 1,
+               borderRadius: 5,
+               paddingLeft: 10,
+               backgroundColor: '#F0FBF0'
+        
+             },
+             register: {
+                 flexDirection: 'row',
+                 alignItems: 'center',
+                 justifyContent: 'center',
+             },
+             logo: {
+                 marginBottom: 50,
+             },
+             font: {
+                fontSize: 15,
+            }
+        })
+
+        return <View style={styles.container}>
         <Image 
         source={logo}
         style={styles.logo}
         />
-        <Text style={styles.text}>Log In</Text>
         <TextInput 
             style={styles.field}
-            placeholder='Email Address'/>
+            placeholder='email@planted.com'
+            onChangeText={(email) => this.setState({email})}
+            value={this.state.email}/>
 
         <TextInput
             style={styles.field}
             placeholder='Password'
+            onChangeText={(password) => this.setState({password})}
+            value={this.state.password}
         />
-
         <View style={styles.register}>
             <Text style={styles.font}>Not Registered?</Text>
             <Button 
@@ -35,55 +87,26 @@ let LoginScreen = (props) =>
             onPress={() => props.navigation.navigate('Register')}
         />
         </View>
-
-        <Button
+        <View style={styles.button}>
+            <Button
             style={styles.register}
-          title="Submit"
-          color="#841584"
-          onPress={() => submitUserLoginInformation()}
-        />
+            title="Submit"
+            color="white"
+            onPress={() => loginUser()}
+            />
+        </View>
+        </View>
+}
+}
 
-        <Button
-            style={styles.button}
-          title="Go to Home"
-          color="#841584"
-          onPress={() => props.navigation.navigate('Home')}
-        />
-    </View>
 
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    text: {
-        fontSize: 20,
-        fontWeight: 'bold'
-    },
-     field: {
-       height: 40, 
-       width: 300,
-       margin: 10,
-       borderColor: 'gray', 
-       borderWidth: 1,
-       borderRadius: 5,
-       paddingLeft: 10,
-       backgroundColor: '#F0FBF0'
+let mapDispatchToProps = (dispatch) => {
+    return { dispatch: dispatch };
+}
 
-     },
-     register: {
-         flexDirection: 'row',
-         alignItems: 'center',
-         justifyContent: 'center',
-     },
-     logo: {
-         marginBottom: 30,
-     },
-     font: {
-        fontSize: 15,
-     }
-  });
+let LoginScreen = connect(
+    null,
+    mapDispatchToProps
+)(LoginScreenDumb);
 
-    export default LoginScreen;
+export default LoginScreen;
