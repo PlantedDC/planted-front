@@ -17,7 +17,6 @@ let LoginScreen = (props) =>
         source={logo}
         style={styles.logo}
         />
-        <Text style={styles.text}>Log In</Text>
         <TextInput 
             style={styles.field}
             placeholder='Email Address'/>
@@ -57,10 +56,6 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
-    },
-    text: {
-        fontSize: 20,
-        fontWeight: 'bold'
     },
      field: {
        height: 40, 

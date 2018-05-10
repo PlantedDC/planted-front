@@ -1,11 +1,11 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import RootStack from './RootStack';
+import AppNavigator from './AppNavigator';
 import store from './Store';
 
 let App = () => 
     <Provider store={store}>
-        <RootStack />
+        <AppNavigator />
     </Provider>
 
 
