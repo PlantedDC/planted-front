@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, TextInput, Text, View, Button } from 'react-native';
+import { StyleSheet, TextInput, Text, View, Button, Image } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
+import logo from './images/logo.png';
 
 let submitUserLoginInformation = (props) => {
     console.log(props);
@@ -12,7 +13,11 @@ let submitUserLoginInformation = (props) => {
 
 let LoginScreen = (props) =>
     <View style={styles.container}>
-        <Text>LOGIN</Text>
+        <Image 
+        source={logo}
+        style={styles.logo}
+        />
+        <Text style={styles.text}>Log In</Text>
         <TextInput 
             style={styles.field}
             placeholder='Email Address'/>
@@ -23,14 +28,16 @@ let LoginScreen = (props) =>
         />
 
         <View style={styles.register}>
-            <Text>Not Registered?</Text>
-            <Button title="Create an account"
+            <Text style={styles.font}>Not Registered?</Text>
+            <Button 
+            title="Create an account"
+            style={styles.button}
             onPress={() => props.navigation.navigate('Register')}
         />
         </View>
 
         <Button
-            style={styles.button}
+            style={styles.register}
           title="Submit"
           color="#841584"
           onPress={() => submitUserLoginInformation()}
@@ -51,17 +58,31 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
+    text: {
+        fontSize: 20,
+        fontWeight: 'bold'
+    },
      field: {
        height: 40, 
-       width: 200,
+       width: 300,
        margin: 10,
        borderColor: 'gray', 
-       borderWidth: 1
+       borderWidth: 1,
+       borderRadius: 5,
+       paddingLeft: 10,
+       backgroundColor: '#F0FBF0'
+
      },
      register: {
          flexDirection: 'row',
          alignItems: 'center',
          justifyContent: 'center',
+     },
+     logo: {
+         marginBottom: 30,
+     },
+     font: {
+        fontSize: 15,
      }
   });
 

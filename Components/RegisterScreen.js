@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, TextInput, Text, View, Button } from 'react-native';
+import { StyleSheet, TextInput, Text, View, Button, Image } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
+import logo from './images/logo.png';
 
 // let submitUserLoginInformation = (event, dispatch, history) => {
 //     event.preventDefault();
@@ -11,8 +12,12 @@ import { createStackNavigator } from 'react-navigation';
 // };
 
 let RegisterScreen = (props) =>
-    <View style={styles.container}>
-        <Text>Create Account</Text>
+<View style={styles.container}>
+        <Image 
+        source={logo}
+        style={styles.logo}
+        />
+        <Text style={styles.text}>Create Account</Text>
         <TextInput 
             style={styles.field}
             placeholder='Email Address'/>
@@ -23,11 +28,20 @@ let RegisterScreen = (props) =>
         />
 
         <View style={styles.register}>
-            <Text>Already Registered?</Text>
-            <Button title="Log In Here"
+            <Text style={styles.font}>Already Registered?</Text>
+            <Button 
+            title="Log In Here"
+            style={styles.button}
             onPress={() => props.navigation.navigate('Login')}
         />
         </View>
+
+        <Button
+            style={styles.register}
+          title="Submit"
+          color="#841584"
+          onPress={() => submitUserLoginInformation()}
+        />
 
         <Button
             style={styles.button}
@@ -39,23 +53,37 @@ let RegisterScreen = (props) =>
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-     field: {
-       height: 40, 
-       width: 200,
-       margin: 10,
-       borderColor: 'gray', 
-       borderWidth: 1
-     },
-     register: {
-         flexDirection: 'row',
-         alignItems: 'center',
-         justifyContent: 'center',
-     }
-  });
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+      text: {
+          fontSize: 20,
+          fontWeight: 'bold'
+      },
+       field: {
+         height: 40, 
+         width: 300,
+         margin: 10,
+         borderColor: 'gray', 
+         borderWidth: 1,
+         borderRadius: 5,
+         paddingLeft: 10,
+         backgroundColor: '#F0FBF0'
+  
+       },
+       register: {
+           flexDirection: 'row',
+           alignItems: 'center',
+           justifyContent: 'center',
+       },
+       logo: {
+           marginBottom: 30,
+       },
+       font: {
+          fontSize: 15,
+       }
+    });
 
   export default RegisterScreen;

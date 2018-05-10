@@ -1,9 +1,9 @@
-import {createStore} from 'redux';
+import { createStore } from 'redux';
+import devToolsEnhancer from 'remote-redux-devtools';
 import reducer from './Reducer';
 
 
 let store = createStore(
-  reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+  reducer, devToolsEnhancer());
 
 export default store;
