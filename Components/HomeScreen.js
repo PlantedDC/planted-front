@@ -6,18 +6,6 @@ let HomeScreen = (props) => {
     return <View style={styles.container}>
         <Text>PLANTED is AWESOME!!!</Text>
         <Text>This would show our current data!!!!</Text>
-        <Button
-          title="Temperature"
-          onPress={() => props.navigation.navigate('Temperature')}
-        />
-        <Button
-          title="Moisture"
-          onPress={() => props.navigation.navigate('Moisture')}
-        />
-        <Button
-        title="Sunlight"
-        onPress={() => props.navigation.navigate('Sunlight')}
-        />
     </View>
 }
 

@@ -11,7 +11,7 @@ import logo from './images/logo.png';
 //     event.target.reset();
 // };
 
-let RegisterScreen = (props) =>
+let RegisterScreen = ({props}) =>
 <View style={styles.container}>
         <Image 
         source={logo}
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
            justifyContent: 'center',
        },
        logo: {
-           marginBottom: 30,
+           marginBottom: 50,
        },
        font: {
           fontSize: 15,
