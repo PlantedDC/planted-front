@@ -1,25 +1,35 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 
-let HumidityScreen = (props) => {
-    
-    return <View style={styles.container}>
-        <Text>Humidity Screen</Text>
+class HumidityScreen extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerRight: (
         <Button
-          title="Go to Home"
-          onPress={() => props.navigation.navigate('Home')}
+        title="Profile"
+        color="green"
+        onPress={() => navigation.navigate('Profile')}
         />
-      </View>
-}
+      ),
+    };
+  }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  render() {
+
+    const styles = StyleSheet.create({
+      container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+    });
+
+    return <View style={styles.container}>
+        <Text>Humidity</Text>
+      </View>
+  }
+}
 
 export default HumidityScreen;

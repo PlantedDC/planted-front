@@ -1,38 +1,14 @@
 import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import SunlightScreen from './Components/SunlightScreen';
-import MoistureScreen from './Components/MoistureScreen';
-import HomeNavigator from './HomeNavigator';
-import TemperatureScreen from './Components/TemperatureScreen';
-import HumidityScreen from './Components/HumidityScreen';
+import HomeNavigator, {MoistureNavigator, TemperatureNavigator, HumidityNavigator, SunlightNavigator} from './HomeNavigator';
 
 let StackNavigator = createBottomTabNavigator({
       Home: HomeNavigator,
-      Moisture: {
-      screen: MoistureScreen,
-      navigationOptions: {
-        title: 'Moisture',
-      }
-    },
-    Sunlight: {
-      screen: SunlightScreen,
-      navigationOptions: {
-        title: 'Sunlight',
-      }
-    },
-    Temperature: {
-      screen: TemperatureScreen,
-      navigationOptions: {
-        title: 'Temperature',
-      }
-    },
-    Humidity: {
-      screen: HumidityScreen,
-      navigationOptions: {
-        title: 'Humidity',
-      }
-    },
+      Moisture: MoistureNavigator,
+      Sunlight: SunlightNavigator,
+      Temperature: TemperatureNavigator,
+      Humidity: HumidityNavigator
 },
     {
     navigationOptions: ({ navigation }) => ({

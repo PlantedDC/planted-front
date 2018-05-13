@@ -1,24 +1,35 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 
-let TemperatureScreen = (props) => {
-    return <View style={styles.container}>
-        <Text>Temperature Screen</Text>
+class TemperatureScreen extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerRight: (
         <Button
-          title="Go to Home"
-          onPress={() => props.navigation.navigate('Home')}
+        title="Profile"
+        color="green"
+        onPress={() => navigation.navigate('Profile')}
         />
-      </View>
-}
+      ),
+    };
+  }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  render() {
+
+    const styles = StyleSheet.create({
+      container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+    });
+
+    return <View style={styles.container}>
+        <Text>Temperature</Text>
+      </View>
+  }
+}
 
 export default TemperatureScreen;
