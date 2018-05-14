@@ -1,7 +1,8 @@
 import reducers from './actions';
 
 const initialState = {
-    isUserLoggedIn: false,
+    isUserLoggedIn: false, 
+    token: ''
 }
 
 let fallbackReducer = state => state; 

@@ -1,9 +1,12 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
+import {getData} from './helperFunctions/fetchRequests';
+import { updateUserObject, updatePlantData } from '../actions';
 
 
-class HomeScreen extends React.Component {
+class HomeScreenComponent extends React.Component {
 
   static navigationOptions = ({ navigation }) => {
 
@@ -16,6 +19,14 @@ class HomeScreen extends React.Component {
         />
       ),
     };
+  }
+
+  componentDidMount() {
+    getData(this.props.token)
+    .then((res) => {
+      this.props.dispatch(updateUserObject(res.data.currentUser.user));
+      this.props.dispatch(updatePlantData(res.data.currentUser.plantData));
+    })
   }
 
   render() {
@@ -41,6 +52,15 @@ class HomeScreen extends React.Component {
 }
 }
 
+let mapStateToProps = (state) => {
+  return {token: state.token,
+          isUserLoggedIn: state.isUserLoggedIn}
+};
 
+let mapDispatchToProps = (dispatch) => {
+  return {dispatch: dispatch}
+};
+
+let HomeScreen = connect(mapStateToProps, mapDispatchToProps)(HomeScreenComponent);
 
 export default HomeScreen;
