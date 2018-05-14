@@ -9,18 +9,18 @@ import {updateUserObject, updateIsUserLoggedIn} from '../actions';
 class RegisterScreenDumb extends Component {
     constructor(props) {
         super(props);
-        this.state = { email: '', password: '' };
+        this.state = { email: '', password: '', username: '' };
       }
 
     render() {
         let {navigation, dispatch} = this.props;
-        let {email, password} = this.state;
+        let {email, password, username} = this.state;
 
         let registerUser = () => {
-            submitNewUserInformation(email, password)
+            submitNewUserInformation(email, password, username)
             .then(res => dispatch(updateUserObject(res)))
             .then(dispatch(updateIsUserLoggedIn()))
-            .then(this.setState({email: '', password: ''}))
+            .then(this.setState({email: '', password: '', username: ''}))
             .then(navigation.navigate('Home'))
         }
 
@@ -67,6 +67,12 @@ class RegisterScreenDumb extends Component {
         source={logo}
         style={styles.logo}
         />
+        <TextInput 
+            style={styles.field}
+            placeholder='Create a Username'
+            onChangeText={(username) => this.setState({username})}
+            value={this.state.username}/>
+
         <TextInput 
             style={styles.field}
             placeholder='email@planted.com'

@@ -84,7 +84,7 @@ class LoginScreenDumb extends Component {
             <Button 
             title="Create an account"
             style={styles.button}
-            onPress={() => props.navigation.navigate('Register')}
+            onPress={() => navigation.navigate('Register')}
         />
         </View>
         <View style={styles.button}>
