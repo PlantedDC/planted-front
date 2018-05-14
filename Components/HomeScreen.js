@@ -35,27 +35,38 @@ class HomeScreenComponent extends React.Component {
     let {navigation, plantData} = this.props;
 
     const styles = StyleSheet.create({
+      dataContainer: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 350,
+      },
       container: {
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
       },
+      font: {
+        fontSize: 20,
+      }
     });
 
     let DisplayDataOnScreen = () => {
-      console.log(plantData);
       let key = 0;
       if (plantData === null || plantData === undefined) {
         return <View><Text>Loading...</Text></View>
       } else {
-        return <View style={styles.container}>{
+        return <View style={styles.dataContainer}>{
           plantData.map(data => <DataDisplay data={data} key={key++} />)
         }</View>
       }
     };
 
-    return <DisplayDataOnScreen />
+    return <View style={styles.container}>
+      <Text style={styles.font}>Current Readings</Text>
+      <DisplayDataOnScreen />
+      </View>
 }
 }
 
