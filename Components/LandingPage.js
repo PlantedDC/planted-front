@@ -10,16 +10,18 @@ let LandingPage = (props) =>
         style={styles.logo}
         />
 
-        <View style={styles.button}>
+        <View style={styles.login}>
             <Button 
+            style={styles.button}
             title="Log In"
             color='white'
             onPress={() => props.navigation.navigate('Login')}
         />
         </View>
 
-        <View style={styles.button}>
+        <View style={styles.login}>
         <Button
+            style={styles.button}
             title="Create Account"
             color='white'
             onPress={() => props.navigation.navigate('Register')}
@@ -37,13 +39,17 @@ const styles = StyleSheet.create({
      logo: {
          marginBottom: 30,
      },
-     button: {
+     login: {
          width: 250,
          height: 80,
          backgroundColor: '#077C4A',
          margin: 20,
          justifyContent: 'center',
          alignItems: 'center',
+     },
+     button: {
+         height: 80,
+         width: 250,
      }
   });
 
