@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, TextInput, Text, View, Button, Image } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
-import logo from './images/logo.png';
+import logo from './images/logo_planted.png';
 
 let LandingPage = (props) =>
     <View style={styles.container}>
@@ -37,12 +37,15 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
      logo: {
-         marginBottom: 30,
+        marginBottom: 20,
+        width: 300,
+        height: 150,
+        resizeMode: 'contain'
      },
      login: {
          width: 250,
          height: 80,
-         backgroundColor: '#077C4A',
+         backgroundColor: '#5c720d',
          margin: 20,
          justifyContent: 'center',
          alignItems: 'center',
