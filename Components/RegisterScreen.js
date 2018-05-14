@@ -9,20 +9,20 @@ import {updateUserObject, updateIsUserLoggedIn} from '../actions';
 class RegisterScreenDumb extends Component {
     constructor(props) {
         super(props);
-        this.state = { email: '', password: '', username: '' };
+        this.state = { email: '', password: '', username: '', avatar: '' };
       }
 
-    render() {
+    registerUser() {
         let {navigation, dispatch} = this.props;
-        let {email, password, username} = this.state;
+        let {email, password, username, avatar} = this.state;
+        submitNewUserInformation(email, password, username, avatar)
+        .then(res => dispatch(updateUserObject(res)))
+        .then(dispatch(updateIsUserLoggedIn()))
+        .then(this.setState({email: '', password: '', username: ''}))
+        .then(navigation.navigate('Home'))
+    }
 
-        let registerUser = () => {
-            submitNewUserInformation(email, password, username)
-            .then(res => dispatch(updateUserObject(res)))
-            .then(dispatch(updateIsUserLoggedIn()))
-            .then(this.setState({email: '', password: '', username: ''}))
-            .then(navigation.navigate('Home'))
-        }
+    render() {
 
         const styles = StyleSheet.create({
             container: {
@@ -53,12 +53,18 @@ class RegisterScreenDumb extends Component {
                  flexDirection: 'row',
                  alignItems: 'center',
                  justifyContent: 'center',
+                 width: 200,
+                 height: 50,
              },
              logo: {
-                 marginBottom: 50,
+                 marginBottom: 40,
              },
              font: {
                 fontSize: 15,
+            },
+            label: {
+                width: 300,
+                textAlign: 'left',
             }
         })
 
@@ -67,21 +73,30 @@ class RegisterScreenDumb extends Component {
         source={logo}
         style={styles.logo}
         />
+        <Text style={styles.label}>Create a username</Text>
         <TextInput 
             style={styles.field}
-            placeholder='Create a Username'
+            placeholder='username'
             onChangeText={(username) => this.setState({username})}
             value={this.state.username}/>
-
+        <Text style={styles.label}>Enter your email</Text>
         <TextInput 
             style={styles.field}
             placeholder='email@planted.com'
             onChangeText={(email) => this.setState({email})}
             value={this.state.email}/>
-
+        <Text style={styles.label}>Create a password</Text>
         <TextInput
             style={styles.field}
-            placeholder='Create a Password'
+            placeholder='Password123'
+            secureTextEntry={true}
+            onChangeText={(password) => this.setState({password})}
+            value={this.state.password}
+        />
+        <Text style={styles.label}>Link to Avatar</Text>
+        <TextInput
+            style={styles.field}
+            placeholder='Image URL'
             onChangeText={(password) => this.setState({password})}
             value={this.state.password}
         />
@@ -98,7 +113,7 @@ class RegisterScreenDumb extends Component {
             style={styles.register}
             title="Submit"
             color="white"
-            onPress={() => registerUser()}
+            onPress={() => this.registerUser()}
             />
         </View>
         </View>

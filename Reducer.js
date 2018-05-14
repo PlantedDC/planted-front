@@ -1,7 +1,10 @@
 import reducers from './actions';
 
 const initialState = {
-    isUserLoggedIn: false,
+    isUserLoggedIn: false, 
+    token: '',
+    plantData: null,
+    userObject: {}
 }
 
 let fallbackReducer = state => state; 

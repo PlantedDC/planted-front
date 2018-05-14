@@ -12,23 +12,25 @@ class LoginScreenDumb extends Component {
         this.state = { email: '', password: '' };
       }
 
-    render() {
+    loginUser () {
         let {navigation, dispatch} = this.props;
         let {email, password} = this.state;
+        let userEmail = (email.trim()).toLowerCase();
+        let userPassword = password.trim();
+        submitUserLoginInformation(userEmail, userPassword)
+        .then((res) => {
+            if (res) {
+                dispatch(updateToken(res));
+                dispatch(updateIsUserLoggedIn());
+                this.setState({email: '', password: ''});
+                navigation.navigate('Home');
+            } else {
+                this.setState({email: '', password: ''});
+            }
+        })
+    }
 
-        let loginUser = () => {
-            submitUserLoginInformation(email.trim(), password.trim())
-            .then((res) => {
-                if (res) {
-                    dispatch(updateToken(res));
-                    dispatch(updateIsUserLoggedIn());
-                    this.setState({email: '', password: ''});
-                    navigation.navigate('Home');
-                } else {
-                    this.setState({email: '', password: ''});
-                }
-            })
-        }
+    render() {
 
         const styles = StyleSheet.create({
             container: {
@@ -59,12 +61,18 @@ class LoginScreenDumb extends Component {
                  flexDirection: 'row',
                  alignItems: 'center',
                  justifyContent: 'center',
+                 width: 200,
+                 height: 50,
              },
              logo: {
                  marginBottom: 50,
              },
              font: {
                 fontSize: 15,
+            },
+            label: {
+                width: 300,
+                textAlign: 'left',
             }
         })
 
@@ -73,12 +81,13 @@ class LoginScreenDumb extends Component {
         source={logo}
         style={styles.logo}
         />
+        <Text style={styles.label}>Email:</Text>
         <TextInput 
             style={styles.field}
             placeholder='email@planted.com'
             onChangeText={(email) => this.setState({email})}
             value={this.state.email}/>
-
+        <Text style={styles.label}>Password:</Text>
         <TextInput
             style={styles.field}
             placeholder='Password'
@@ -98,7 +107,7 @@ class LoginScreenDumb extends Component {
             style={styles.register}
             title="Submit"
             color="white"
-            onPress={() => loginUser()}
+            onPress={() => this.loginUser()}
             />
         </View>
         </View>
