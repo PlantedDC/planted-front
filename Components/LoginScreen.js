@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import { StyleSheet, TextInput, Text, View, Button, Image } from 'react-native';
+import { StyleSheet, TextInput, Text, View, Button, Image, AsyncStorage } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import logo from './images/logo.png';
 import { connect } from 'react-redux';
 import {submitUserLoginInformation} from './helperFunctions/Login';
-import {updateUserObject, updateIsUserLoggedIn} from '../actions';
+import {updateToken, updateIsUserLoggedIn} from '../actions';
 
 class LoginScreenDumb extends Component {
     constructor(props) {
@@ -17,11 +17,17 @@ class LoginScreenDumb extends Component {
         let {email, password} = this.state;
 
         let loginUser = () => {
-            submitUserLoginInformation(email, password)
-            .then(res => dispatch(updateUserObject(res)))
-            .then(dispatch(updateIsUserLoggedIn()))
-            .then(this.setState({email: '', password: ''}))
-            .then(navigation.navigate('Home'))
+            submitUserLoginInformation(email.trim(), password.trim())
+            .then((res) => {
+                if (res) {
+                    dispatch(updateToken(res));
+                    dispatch(updateIsUserLoggedIn());
+                    this.setState({email: '', password: ''});
+                    navigation.navigate('Home');
+                } else {
+                    this.setState({email: '', password: ''});
+                }
+            })
         }
 
         const styles = StyleSheet.create({

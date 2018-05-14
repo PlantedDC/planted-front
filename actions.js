@@ -5,17 +5,16 @@ let updateIsUserLoggedInAction = (state, action) => {
   }
 updateIsUserLoggedIn.toString = () => UPDATE_IS_USER_LOGGED_IN;
 
-const UPDATE_USER_OBJECT = "UPDATE_USER_OBJECT";
-export let updateUserObject = (token) => ({type: UPDATE_USER_OBJECT, payload: token});
-let updateUserObjectAction = (state, action) => {
-    let newUserObject = Object.assign({}, action.payload);
-    return ({...state, userObject: newUserObject});
+const UPDATE_TOKEN = "UPDATE_TOKEN";
+export let updateToken = (token) => ({type: UPDATE_TOKEN, payload: token});
+let updateTokenAction = (state, action) => {
+    return ({...state, token: action.payload});
   }
-updateUserObject.toString = () => UPDATE_USER_OBJECT;
+updateToken.toString = () => UPDATE_TOKEN;
 
 let reducers = {
     [updateIsUserLoggedIn]: updateIsUserLoggedInAction,
-    [updateUserObject]: updateUserObjectAction,
+    [updateToken]: updateTokenAction,
 }
 
 export default reducers;
