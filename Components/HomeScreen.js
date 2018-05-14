@@ -45,11 +45,12 @@ class HomeScreenComponent extends React.Component {
 
     let DisplayDataOnScreen = () => {
       console.log(plantData);
+      let key = 0;
       if (plantData === null || plantData === undefined) {
         return <View><Text>Loading...</Text></View>
       } else {
         return <View style={styles.container}>{
-          plantData.map(data => <DataDisplay data={data} />)
+          plantData.map(data => <DataDisplay data={data} key={key++} />)
         }</View>
       }
     };
