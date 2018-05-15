@@ -42,7 +42,6 @@ class SunlightScreenComponent extends Component {
               />
       }
     };
-
     return <View style={styles.container}>
       <Text style={styles.font}>Current Readings</Text>
       <DisplayDataOnScreen />

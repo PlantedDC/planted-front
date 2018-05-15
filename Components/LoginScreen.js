@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { StyleSheet, TextInput, Text, View, Button, Image, AsyncStorage } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
-import logo from './images/logo.png';
+import logo from './images/logo_planted.png';
 import { connect } from 'react-redux';
 import {submitUserLoginInformation, setLoginToAsyncStorage} from './helperFunctions/Login';
 import {updateToken, updateIsUserLoggedIn} from '../actions';
@@ -56,6 +56,8 @@ class LoginScreenDumb extends Component {
     }
 
     render() {
+        
+        let {navigation} = this.props;
 
         const styles = StyleSheet.create({
             container: {
@@ -67,9 +69,11 @@ class LoginScreenDumb extends Component {
             button: {
                 width: 200,
                 height: 50,
-                backgroundColor: '#077C4A',
+                backgroundColor: '#5c720d',
                 alignItems: 'center',
                 justifyContent: 'center',
+                marginTop: 20,
+                color: '#5c720d'
             },
              field: {
                height: 40, 
@@ -79,7 +83,7 @@ class LoginScreenDumb extends Component {
                borderWidth: 1,
                borderRadius: 5,
                paddingLeft: 10,
-               backgroundColor: '#F0FBF0'
+               backgroundColor: '#f1f9d2'
         
              },
              register: {
@@ -90,7 +94,10 @@ class LoginScreenDumb extends Component {
                  height: 50,
              },
              logo: {
-                 marginBottom: 50,
+                marginBottom: 20,
+                width: 300,
+                height: 150,
+                resizeMode: 'contain'
              },
              font: {
                 fontSize: 15,
