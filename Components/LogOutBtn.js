@@ -9,11 +9,10 @@ let LogOutBtn = ({navigation, dispatch, state}) =>
         <Button 
             style={styles.logoutBtn}
             title="Log Out"
+            color='green'
             onPress={() => {
                 AsyncStorage.removeItem('token')
-                console.log(dispatch)
                 dispatch(updateUserLoggedOut())
-                console.log('just logged out', state)
                 navigation.navigate('Login')
             }}
         />
@@ -24,9 +23,13 @@ const styles = StyleSheet.create({
         position: 'absolute',
         right: 0,
         top: 0,
+        borderRadius: 10,
+        borderColor: 'green',
+        borderWidth: 2,
+        
     },
     logoutBtn: {
-
+        margin: 0,
     }
     
 });

@@ -14,7 +14,12 @@ updateIsUserLoggedIn.toString = () => UPDATE_IS_USER_LOGGED_IN;
 
 export let updateUserLoggedOut = () => ({ type: UPDATE_USER_LOGGED_OUT});
 let updateUserLoggedOutAction = (state, action) => {
-  return ({...state, isUserLoggedIn: false})
+  return ({
+    isUserLoggedIn: false, 
+    token: '',
+    plantData: null,
+    userObject: {}
+  })
 }
 updateUserLoggedOut.toString = () => UPDATE_USER_LOGGED_OUT;
 
