@@ -15,7 +15,7 @@ let ProfileDataPart = () => {
 
 const styles = StyleSheet.create({
     data: {
-        backgroundColor: 'gray',
+        // backgroundColor: 'gray',
         flex: 3
     }
 });
