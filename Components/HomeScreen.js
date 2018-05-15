@@ -1,11 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, FlatList } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import {getData} from './helperFunctions/fetchRequests';
 import { updateUserObject, updatePlantData } from '../actions';
 import DataDisplay from './DataDisplay';
-
 
 class HomeScreenComponent extends React.Component {
 
@@ -57,9 +56,10 @@ class HomeScreenComponent extends React.Component {
       if (plantData === null || plantData === undefined) {
         return <View><Text>Loading...</Text></View>
       } else {
-        return <View style={styles.dataContainer}>{
-          plantData.map(data => <DataDisplay data={data} key={key++} />)
-        }</View>
+        return <FlatList
+          data={plantData}
+          renderItem={({item}) => <DataDisplay data={item} />}
+          />
       }
     };
 

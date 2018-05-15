@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         resizeMode: 'contain'
      },
      login: {
-         width: 250,
+         width: 300,
          height: 80,
          backgroundColor: '#5c720d',
          margin: 20,
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
      },
      button: {
          height: 80,
-         width: 250,
+         width: 300,
      }
   });
 
