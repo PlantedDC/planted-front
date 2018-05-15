@@ -16,7 +16,8 @@ export let getData = (token) => {
             temp
             sun
             moist
-            ph
+            humidity
+            dataid
         }
 	  }
     }`

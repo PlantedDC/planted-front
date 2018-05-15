@@ -37,6 +37,7 @@ class SunlightScreenComponent extends Component {
       } else {
         return <FlatList style={styles.dataContainer}
               data={plantData}
+              keyExtractor={(item) => item.dataid.toString()}              
               renderItem={({item}) => <SunlightDisplay data={item} />}
               />
       }

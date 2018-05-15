@@ -37,6 +37,7 @@ class HumidityScreenComponent extends Component {
       } else {
         return <FlatList style={styles.dataContainer}
               data={plantData}
+              keyExtractor={(item) => item.dataid.toString()}
               renderItem={({item}) => <HumidityDisplay data={item} />}
               />
       }
