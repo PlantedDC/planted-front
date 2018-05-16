@@ -3,7 +3,7 @@ import { StyleSheet, TextInput, Text, View, Button, Image, AsyncStorage } from '
 import { createStackNavigator } from 'react-navigation';
 import logo from './images/logo_planted.png';
 import { connect } from 'react-redux';
-import {submitUserLoginInformation, setLoginToAsyncStorage} from './helperFunctions/Login';
+import {submitUserLoginInformation, setTokenToAsyncStorage} from './helperFunctions/Login';
 import {updateToken, updateIsUserLoggedIn} from '../actions';
 
 
@@ -18,22 +18,22 @@ class LoginScreenDumb extends Component {
       }
     
     //testing mode/ delete after
-    componentDidMount() {
-        let {navigation, dispatch} = this.props;
-        let userEmail = 'test1@gmail.com';
-        let userPassword = '1111';
-        submitUserLoginInformation(userEmail, userPassword)
-            .then(async (res) => {
-                console.log(res)
-                if (res.status === 200) {
-                    res = await res.text();
-                    setLoginToAsyncStorage(res)
-                    dispatch(updateToken(res));
-                    dispatch(updateIsUserLoggedIn());
-                    navigation.navigate('Profile');
-                }
-            })
-    }
+    // componentDidMount() {
+    //     let {navigation, dispatch} = this.props;
+    //     let userEmail = 'test1@gmail.com';
+    //     let userPassword = '1111';
+    //     submitUserLoginInformation(userEmail, userPassword)
+    //         .then(async (res) => {
+    //             console.log(res)
+    //             if (res.status === 200) {
+    //                 res = await res.text();
+    //                 setLoginToAsyncStorage(res)
+    //                 dispatch(updateToken(res));
+    //                 dispatch(updateIsUserLoggedIn());
+    //                 navigation.navigate('Profile');
+    //             }
+    //         })
+    // }
 
     loginUser () {
         let {navigation, dispatch} = this.props;
@@ -44,7 +44,7 @@ class LoginScreenDumb extends Component {
         .then(async (res) => {
             if (res.status === 200) {
                 res = await res.text();
-                setLoginToAsyncStorage(res)
+                setTokenToAsyncStorage(res)
                 dispatch(updateToken(res));
                 dispatch(updateIsUserLoggedIn());
                 this.setState({email: '', password: ''});

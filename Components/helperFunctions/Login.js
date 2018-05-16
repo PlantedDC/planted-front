@@ -1,8 +1,9 @@
 import {AsyncStorage} from 'react-native';
 
-export let setLoginToAsyncStorage = (userInfo) => {
-    AsyncStorage.setItem('token', JSON.stringify(userInfo));
-    return userInfo;
+export let setTokenToAsyncStorage = (token) => {
+    console.log('token', token)
+    AsyncStorage.setItem('token', token);
+    return token;
 }
 
 export let submitUserLoginInformation = (email, password) => {
@@ -21,13 +22,13 @@ export let submitUserLoginInformation = (email, password) => {
 
 export let submitNewUserInformation = (email, password, username, avatar) => {
     let userInfo = JSON.stringify({"username": username, "email":email, "password": password, "avatar": avatar});
-    return(fetch("https://radiant-anchorage-62389.herokuapp.com/register", 
+    return fetch("https://radiant-anchorage-62389.herokuapp.com/register", 
         {method: "POST",
-        body: userInfo,
-        headers: new Headers ({
-            "Content-Type": "application/json"
-        })
+            body: userInfo,
+            headers: new Headers ({
+                "Content-Type": "application/json"
+            })
         }
-        )
-        .then(res => res.json()))
+    )
+        // .then(res => res.json())
 }

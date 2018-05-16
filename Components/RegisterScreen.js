@@ -3,8 +3,8 @@ import { StyleSheet, TextInput, Text, View, Button, Image } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import logo from './images/logo_planted.png';
 import { connect } from 'react-redux';
-import {submitNewUserInformation} from './helperFunctions/Login';
-import {updateUserObject, updateIsUserLoggedIn} from '../actions';
+import {submitNewUserInformation, setTokenToAsyncStorage} from './helperFunctions/Login';
+import {updateUserObject, updateIsUserLoggedIn, updateToken} from '../actions';
 
 class RegisterScreenDumb extends Component {
     constructor(props) {
@@ -15,11 +15,17 @@ class RegisterScreenDumb extends Component {
     registerUser() {
         let {navigation, dispatch} = this.props;
         let {email, password, username, avatar} = this.state;
-        submitNewUserInformation(email, password, username, avatar)
-        .then(res => dispatch(updateUserObject(res)))
-        .then(dispatch(updateIsUserLoggedIn()))
-        .then(this.setState({email: '', password: '', username: ''}))
-        .then(navigation.navigate('Home'))
+        let userEmail = email.trim().toLowerCase();
+        let userPassword = password.trim();
+        submitNewUserInformation(userEmail, userPassword, username, avatar)
+        .then( res => res.text())
+        .then(res => {
+            setTokenToAsyncStorage(res);
+            dispatch(updateToken(res));
+            dispatch(updateIsUserLoggedIn());
+            this.setState({email: '', password: '', username: '', avatar: ''});
+            navigation.navigate('Home')
+        })
     }
 
     render() {
