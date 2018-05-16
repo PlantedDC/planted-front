@@ -5,6 +5,7 @@ import logo from './images/logo_planted.png';
 import { connect } from 'react-redux';
 import {submitNewUserInformation, setTokenToAsyncStorage} from './helperFunctions/Login';
 import {updateUserObject, updateIsUserLoggedIn, updateToken} from '../actions';
+import FadeIn from './animations/FadeIn';
 
 class RegisterScreenDumb extends Component {
     constructor(props) {
@@ -87,10 +88,12 @@ class RegisterScreenDumb extends Component {
         })
 
         return <View style={styles.container}>
-        <Image 
-        source={logo}
-        style={styles.logo}
-        />
+        <FadeIn time={2000}>
+            <Image 
+            source={logo}
+            style={styles.logo}
+            />
+        </FadeIn>
         <Text style={styles.label}>Create a username</Text>
         <TextInput 
             style={styles.field}
