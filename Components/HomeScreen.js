@@ -24,14 +24,12 @@ class HomeScreenComponent extends React.Component {
   componentDidMount() {
     getData(this.props.token)
     .then((res) => {
-      console.log('response', res)
       this.props.dispatch(updateUserObject(res.data.currentUser.user));
       this.props.dispatch(updatePlantData(res.data.currentUser.plantData));
     })
   }
 
   render() {
-
     let {navigation, plantData} = this.props;
 
     const styles = StyleSheet.create({
