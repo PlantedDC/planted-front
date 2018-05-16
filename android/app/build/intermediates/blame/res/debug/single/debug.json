@@ -60,28 +60,28 @@
         "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/drawable-mdpi/abc_list_selector_disabled_holo_light.9.png"
     },
     {
-        "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_abc_ic_search_api_mtrl_alpha.png.flat",
-        "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/drawable-xxxhdpi/abc_ic_search_api_mtrl_alpha.png"
-    },
-    {
-        "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "/Users/Ashley/planted-front/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable-hdpi_abc_btn_radio_to_on_mtrl_015.png.flat",
+        "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/drawable-hdpi/abc_btn_radio_to_on_mtrl_015.png"
     },
     {
         "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/color_abc_primary_text_material_dark.xml.flat",
         "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/color/abc_primary_text_material_dark.xml"
     },
     {
-        "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable-hdpi_abc_btn_radio_to_on_mtrl_015.png.flat",
-        "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/drawable-hdpi/abc_btn_radio_to_on_mtrl_015.png"
+        "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/Ashley/planted-front/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable-mdpi_abc_list_divider_mtrl_alpha.9.png.flat",
-        "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/drawable-mdpi/abc_list_divider_mtrl_alpha.9.png"
+        "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_abc_ic_search_api_mtrl_alpha.png.flat",
+        "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/drawable-xxxhdpi/abc_ic_search_api_mtrl_alpha.png"
     },
     {
         "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_abc_tab_indicator_mtrl_alpha.9.png.flat",
         "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/drawable-xxxhdpi/abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable-mdpi_abc_list_divider_mtrl_alpha.9.png.flat",
+        "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/drawable-mdpi/abc_list_divider_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/anim_abc_grow_fade_in_from_bottom.xml.flat",
@@ -164,28 +164,32 @@
         "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/drawable-ldrtl-xxxhdpi/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_abc_btn_radio_to_on_mtrl_000.png.flat",
-        "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/drawable-xxxhdpi/abc_btn_radio_to_on_mtrl_000.png"
-    },
-    {
         "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable-ldrtl-hdpi_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/drawable-ldrtl-hdpi/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_abc_btn_radio_to_on_mtrl_000.png.flat",
+        "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/drawable-xxxhdpi/abc_btn_radio_to_on_mtrl_000.png"
     },
     {
         "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
         "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/drawable-xxhdpi/abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
-        "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/anim_abc_slide_out_top.xml.flat",
-        "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/anim/abc_slide_out_top.xml"
-    },
-    {
         "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable-hdpi_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
         "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/drawable-hdpi/abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
+        "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/anim_abc_slide_out_top.xml.flat",
+        "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/anim/abc_slide_out_top.xml"
+    },
+    {
         "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/layout_notification_template_part_time.xml.flat",
         "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/Ashley/planted-front/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
         "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/color_abc_primary_text_disable_only_material_light.xml.flat",
@@ -572,6 +576,10 @@
         "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/layout/abc_select_dialog_material.xml"
     },
     {
+        "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable-mdpi_icon.png.flat",
+        "source": "/Users/Ashley/planted-front/android/app/src/main/res/drawable-mdpi/icon.png"
+    },
+    {
         "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable-mdpi_abc_popup_background_mtrl_mult.9.png.flat",
         "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/drawable-mdpi/abc_popup_background_mtrl_mult.9.png"
     },
@@ -614,6 +622,10 @@
     {
         "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable-ldrtl-xhdpi_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/drawable-ldrtl-xhdpi/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable-xhdpi_icon.png.flat",
+        "source": "/Users/Ashley/planted-front/android/app/src/main/res/drawable-xhdpi/icon.png"
     },
     {
         "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable-xhdpi_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
@@ -948,6 +960,10 @@
         "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/color/switch_thumb_material_dark.xml"
     },
     {
+        "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable-hdpi_icon.png.flat",
+        "source": "/Users/Ashley/planted-front/android/app/src/main/res/drawable-hdpi/icon.png"
+    },
+    {
         "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/drawable-xxhdpi/abc_btn_radio_to_on_mtrl_015.png"
     },
@@ -974,6 +990,10 @@
     {
         "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable-xhdpi_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "/Users/Ashley/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae776225294b25c36a44d98a61e2626c/res/drawable-xhdpi/abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_icon.png.flat",
+        "source": "/Users/Ashley/planted-front/android/app/src/main/res/drawable-xxhdpi/icon.png"
     },
     {
         "merged": "/Users/Ashley/planted-front/android/app/build/intermediates/res/merged/debug/drawable_abc_btn_colored_material.xml.flat",
