@@ -8,5 +8,4 @@ let App = () =>
         <AppNavigator />
     </Provider>
 
-
 export default App;
