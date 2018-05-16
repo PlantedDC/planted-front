@@ -1,6 +1,8 @@
 import React from 'react';
 import { Text, View, StyleSheet, Image } from 'react-native';
 import plant from './images/clipart2.png';
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 const styles = StyleSheet.create({
     container: {
@@ -11,6 +13,15 @@ const styles = StyleSheet.create({
       width: 350,
       marginBottom: 10, 
       flexDirection: 'row'
+    },
+    readings: {
+        flex: 1,
+        backgroundColor: '#f1f9d2',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 350,
+        marginBottom: 10, 
+        flexDirection: 'column'
     },
     image: {
         width: 50,
@@ -26,7 +37,7 @@ let DataDisplay = ({data}) =>
           source={plant}
         />
         <View>
-        <Text>{data.created}</Text>
+        <Moment format="YYYY-MM-DD HH:mm" element={Text}>{data.created}</Moment>
         <Text>Temperature: {data.temp} °C</Text>
         <Text>Sunlight: {data.sun} lx</Text>
         <Text>Soil Moisture: {data.moist} %</Text>
@@ -35,27 +46,27 @@ let DataDisplay = ({data}) =>
     </View>
 
 export let MoistureDisplay = ({data}) =>
-    <View style={styles.container}>
-        <Text>{data.created}</Text>
+    <View style={styles.readings}>
+        <Moment format="YYYY-MM-DD HH:mm" element={Text}>{data.created}</Moment>
         <Text>Moisture: {data.moist} %</Text>
     </View>
 
 export let TemperatureDisplay = ({data}) =>
-    <View style={styles.container}>
-        <Text>{data.created}</Text>
+    <View style={styles.readings}>
+        <Moment format="YYYY-MM-DD HH:mm" element={Text}>{data.created}</Moment>
         <Text>Temperature: {data.temp} °C</Text>
     </View>
 
 
 export let HumidityDisplay = ({data}) =>
-    <View style={styles.container}>
-        <Text>{data.created}</Text>
+    <View style={styles.readings}>
+        <Moment format="YYYY-MM-DD HH:mm" element={Text}>{data.created}</Moment>
         <Text>Humidity: {data.humidity} %</Text>
     </View>
 
 export let SunlightDisplay = ({data}) =>
-    <View style={styles.container}>
-        <Text>{data.created}</Text>
+    <View style={styles.readings}>
+        <Moment format="YYYY-MM-DD HH:mm" element={Text}>{data.created}</Moment>
         <Text>Sunlight: {data.sun} lx</Text>
     </View>
 

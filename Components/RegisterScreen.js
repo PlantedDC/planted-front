@@ -40,7 +40,6 @@ class RegisterScreenDumb extends Component {
                 alignItems: 'center',
                 justifyContent: 'center',
                 marginTop: 20,
-                color: '#5c720d'
             },
              field: {
                height: 40, 
@@ -104,8 +103,8 @@ class RegisterScreenDumb extends Component {
         <TextInput
             style={styles.field}
             placeholder='Image URL'
-            onChangeText={(password) => this.setState({password})}
-            value={this.state.password}
+            onChangeText={(avatar) => this.setState({avatar})}
+            value={this.state.avatar}
         />
         <View style={styles.register}>
             <Text style={styles.font}>Already Registered?</Text>

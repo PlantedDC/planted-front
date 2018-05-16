@@ -5,21 +5,22 @@ export let getData = (token) => {
 	    "authorization": token,
     },
 	method: 'POST',
-	body: `
-	query {
-	  currentUser {
-        user {
-            username
-            avatar
-        }
-        plantData {
-            temp
-            sun
-            moist
-            humidity
-            dataid
-        }
-	  }
+	body:` 
+    query {
+        currentUser {
+          user {
+              username
+              avatar
+          }
+          plantData {
+              temp
+              sun
+              moist
+              humidity
+              created
+              dataid
+          }
+	     }
     }`
     })
     .then( res => res.json()))

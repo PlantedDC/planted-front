@@ -56,7 +56,7 @@ class LoginScreenDumb extends Component {
     }
 
     render() {
-        
+
         let {navigation} = this.props;
 
         const styles = StyleSheet.create({
@@ -73,7 +73,6 @@ class LoginScreenDumb extends Component {
                 alignItems: 'center',
                 justifyContent: 'center',
                 marginTop: 20,
-                color: '#5c720d'
             },
              field: {
                height: 40, 

@@ -35,7 +35,7 @@ class TemperatureScreenComponent extends Component {
       if (plantData === null || plantData === undefined) {
         return <View><Text>Loading...</Text></View>
       } else {
-        return <FlatList style={styles.dataContainer}
+        return <FlatList 
               data={plantData}
               keyExtractor={(item) => item.dataid.toString()}              
               renderItem={({item}) => <TemperatureDisplay data={item} />}
