@@ -37,6 +37,7 @@ class MoistureScreenComponent extends Component {
       } else {
         return <FlatList style={styles.dataContainer}
               data={plantData}
+              keyExtractor={(item) => item.dataid.toString()}              
               renderItem={({item}) => <MoistureDisplay data={item} />}
               />
       }

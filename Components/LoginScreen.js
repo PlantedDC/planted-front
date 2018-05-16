@@ -3,14 +3,37 @@ import { StyleSheet, TextInput, Text, View, Button, Image, AsyncStorage } from '
 import { createStackNavigator } from 'react-navigation';
 import logo from './images/logo_planted.png';
 import { connect } from 'react-redux';
-import {submitUserLoginInformation} from './helperFunctions/Login';
+import {submitUserLoginInformation, setLoginToAsyncStorage} from './helperFunctions/Login';
 import {updateToken, updateIsUserLoggedIn} from '../actions';
+
 
 class LoginScreenDumb extends Component {
     constructor(props) {
         super(props);
-        this.state = { email: '', password: '' };
+        this.state = { 
+            email: '', 
+            password: '',
+            failedToLogin: false,
+        };
       }
+    
+    //testing mode/ delete after
+    componentDidMount() {
+        let {navigation, dispatch} = this.props;
+        let userEmail = 'test1@gmail.com';
+        let userPassword = '1111';
+        submitUserLoginInformation(userEmail, userPassword)
+            .then(async (res) => {
+                console.log(res)
+                if (res.status === 200) {
+                    res = await res.text();
+                    setLoginToAsyncStorage(res)
+                    dispatch(updateToken(res));
+                    dispatch(updateIsUserLoggedIn());
+                    navigation.navigate('Profile');
+                }
+            })
+    }
 
     loginUser () {
         let {navigation, dispatch} = this.props;
@@ -18,14 +41,16 @@ class LoginScreenDumb extends Component {
         let userEmail = (email.trim()).toLowerCase();
         let userPassword = password.trim();
         submitUserLoginInformation(userEmail, userPassword)
-        .then((res) => {
-            if (res) {
+        .then(async (res) => {
+            if (res.status === 200) {
+                res = await res.text();
+                setLoginToAsyncStorage(res)
                 dispatch(updateToken(res));
                 dispatch(updateIsUserLoggedIn());
                 this.setState({email: '', password: ''});
                 navigation.navigate('Home');
             } else {
-                this.setState({email: '', password: ''});
+                this.setState({email: '', password: '', failedToLogin: true});
             }
         })
     }
@@ -82,43 +107,49 @@ class LoginScreenDumb extends Component {
             }
         })
 
-        return <View style={styles.container}>
-        <Image 
-        source={logo}
-        style={styles.logo}
-        />
-        <Text style={styles.label}>Email:</Text>
-        <TextInput 
-            style={styles.field}
-            placeholder='email@planted.com'
-            onChangeText={(email) => this.setState({email})}
-            value={this.state.email}/>
-        <Text style={styles.label}>Password:</Text>
-        <TextInput
-            style={styles.field}
-            placeholder='Password'
-            secureTextEntry={true}
-            onChangeText={(password) => this.setState({password})}
-            value={this.state.password}
-        />
-        <View style={styles.register}>
-            <Text style={styles.font}>Not Registered?</Text>
-            <Button 
-            title="Create an account"
-            color="#5c720d"
-            onPress={() => navigation.navigate('Register')}
-        />
-        </View>
-        <View style={styles.button}>
-            <Button
-            style={styles.register}
-            title="Submit"
-            color="white"
-            onPress={() => this.loginUser()}
-            />
-        </View>
-        </View>
-}
+        return ( 
+            <View style={styles.container}>
+                <Image 
+                source={logo}
+                style={styles.logo}
+                />
+                <Text style={styles.label}>Email:</Text>
+                <TextInput 
+                    style={styles.field}
+                    placeholder='email@planted.com'
+                    onChangeText={(email) => this.setState({email})}
+                    value={this.state.email}/>
+                <Text style={styles.label}>Password:</Text>
+                <TextInput
+                    style={styles.field}
+                    placeholder='Password'
+                    onChangeText={(password) => this.setState({password})}
+                    value={this.state.password}
+                />
+                {this.state.failedToLogin && 
+                    <Text style={{color: 'red', margin: 0, padding: 0 }}>
+                        Failed to login. Try again
+                    </Text>
+                }
+                <View style={styles.register}>
+                    <Text style={styles.font}>Not Registered?</Text>
+                    <Button 
+                    title="Create an account"
+                    style={styles.button}
+                    onPress={() => navigation.navigate('Register')}
+                />
+                </View>
+                <View style={styles.button}>
+                    <Button
+                    style={styles.register}
+                    title="Submit"
+                    color="white"
+                    onPress={() => this.loginUser()}
+                    />
+                </View>
+            </View>
+        )
+    }
 }
 
 

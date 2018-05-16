@@ -16,11 +16,12 @@ export let getData = (token) => {
               temp
               sun
               moist
-              ph
+              humidity
               created
+              dataid
           }
-        }
-      }`
+	     }
+    }`
     })
     .then( res => res.json()))
 }

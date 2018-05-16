@@ -61,7 +61,7 @@ export let TemperatureDisplay = ({data}) =>
 export let HumidityDisplay = ({data}) =>
     <View style={styles.readings}>
         <Moment format="YYYY-MM-DD HH:mm" element={Text}>{data.created}</Moment>
-        <Text>Humidity: {data.ph} %</Text>
+        <Text>Humidity: {data.humidity} %</Text>
     </View>
 
 export let SunlightDisplay = ({data}) =>
