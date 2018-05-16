@@ -5,6 +5,7 @@ import logo from './images/logo_planted.png';
 import { connect } from 'react-redux';
 import {submitUserLoginInformation, setTokenToAsyncStorage} from './helperFunctions/Login';
 import {updateToken, updateIsUserLoggedIn} from '../actions';
+import FadeIn from './animations/FadeIn';
 
 
 class LoginScreenDumb extends Component {
@@ -27,7 +28,7 @@ class LoginScreenDumb extends Component {
     //             console.log(res)
     //             if (res.status === 200) {
     //                 res = await res.text();
-    //                 setLoginToAsyncStorage(res)
+    //                 setTokenToAsyncStorage(res)
     //                 dispatch(updateToken(res));
     //                 dispatch(updateIsUserLoggedIn());
     //                 navigation.navigate('Profile');
@@ -115,10 +116,12 @@ class LoginScreenDumb extends Component {
 
         return ( 
             <View style={styles.container}>
-                <Image 
-                source={logo}
-                style={styles.logo}
-                />
+                <FadeIn time={2000}>
+                    <Image 
+                    source={logo}
+                    style={styles.logo}
+                    />
+                </FadeIn>
                 <Text style={styles.label}>Email:</Text>
                 <TextInput 
                     style={styles.field}

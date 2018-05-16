@@ -2,9 +2,11 @@ import React from 'react';
 import { StyleSheet, TextInput, Text, View, Button, Image, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import logo from './images/logo_planted.png';
+import FadeIn from './animations/FadeIn';
 
 let LandingPage = (props) =>
     <View style={styles.container}>
+        <FadeIn time={2000}>
         <Image 
         source={logo}
         style={styles.logo}
@@ -28,6 +30,8 @@ let LandingPage = (props) =>
             <Text style={styles.button}>Create Account</Text>
         </TouchableOpacity>
         </View>
+        </FadeIn>
+        
     </View>
 
 const styles = StyleSheet.create({
