@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { StyleSheet, TextInput, Text, View, Button, Image } from 'react-native';
+import { StyleSheet, TextInput, Text, View, Button, Image, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import logo from './images/logo_planted.png';
 import { connect } from 'react-redux';
@@ -47,6 +47,12 @@ class RegisterScreenDumb extends Component {
                 justifyContent: 'center',
                 marginTop: 20,
             },
+            buttonFont: {
+                color: 'white',
+                fontSize: 20,
+                justifyContent: 'center',
+                alignItems: 'center',
+             },
              field: {
                height: 40, 
                width: 300,
@@ -120,14 +126,12 @@ class RegisterScreenDumb extends Component {
             onPress={() => navigation.navigate('Login')}
         />
         </View>
-        <View style={styles.button}>
-            <Button
-            style={styles.register}
-            title="Submit"
-            color="white"
-            onPress={() => this.registerUser()}
-            />
-        </View>
+        <TouchableOpacity 
+            style={styles.button} 
+            onPress={() => this.loginUser()}
+        >   
+            <Text style={styles.buttonFont}>Create Account</Text>
+        </TouchableOpacity>
         </View>
 }
 }
