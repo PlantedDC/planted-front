@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TextInput, Text, View, Button, Image } from 'react-native';
+import { StyleSheet, TextInput, Text, View, Button, Image, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import logo from './images/logo_planted.png';
 
@@ -11,21 +11,22 @@ let LandingPage = (props) =>
         />
 
         <View style={styles.login}>
-            <Button 
-            style={styles.button}
-            title="Log In"
-            color='white'
+        <TouchableOpacity 
+            style={styles.login} 
             onPress={() => props.navigation.navigate('Login')}
-        />
+        >
+            <Text style={styles.button}>Log In</Text>
+        </TouchableOpacity>
         </View>
 
         <View style={styles.login}>
-        <Button
-            style={styles.button}
-            title="Create Account"
-            color='white'
+
+        <TouchableOpacity 
+            style={styles.login} 
             onPress={() => props.navigation.navigate('Register')}
-        />
+        >
+            <Text style={styles.button}>Create Account</Text>
+        </TouchableOpacity>
         </View>
     </View>
 
@@ -51,8 +52,8 @@ const styles = StyleSheet.create({
          alignItems: 'center',
      },
      button: {
-         height: 80,
-         width: 300,
+        color: 'white',
+        fontSize: 20,
      }
   });
 

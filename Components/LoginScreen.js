@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { StyleSheet, TextInput, Text, View, Button, Image, AsyncStorage } from 'react-native';
+import { StyleSheet, TextInput, Text, View, Button, Image, AsyncStorage, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import logo from './images/logo_planted.png';
 import { connect } from 'react-redux';
@@ -92,6 +92,12 @@ class LoginScreenDumb extends Component {
                  width: 200,
                  height: 50,
              },
+             buttonFont: {
+                color: 'white',
+                fontSize: 20,
+                justifyContent: 'center',
+                alignItems: 'center',
+             },
              logo: {
                 marginBottom: 20,
                 width: 300,
@@ -123,6 +129,7 @@ class LoginScreenDumb extends Component {
                 <TextInput
                     style={styles.field}
                     placeholder='Password'
+                    secureTextEntry={true}
                     onChangeText={(password) => this.setState({password})}
                     value={this.state.password}
                 />
@@ -139,14 +146,13 @@ class LoginScreenDumb extends Component {
                     onPress={() => navigation.navigate('Register')}
                 />
                 </View>
-                <View style={styles.button}>
-                    <Button
-                    style={styles.register}
-                    title="Submit"
-                    color="white"
+
+                <TouchableOpacity 
+                    style={styles.button} 
                     onPress={() => this.loginUser()}
-                    />
-                </View>
+                >   
+                    <Text style={styles.buttonFont}>Log In</Text>
+                </TouchableOpacity>
             </View>
         )
     }
