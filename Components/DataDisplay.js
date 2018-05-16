@@ -41,7 +41,7 @@ let DataDisplay = ({data}) =>
         <Text>Temperature: {data.temp} °C</Text>
         <Text>Sunlight: {data.sun} lx</Text>
         <Text>Soil Moisture: {data.moist} %</Text>
-        <Text>Humidity: {data.ph} %</Text>
+        <Text>Humidity: {data.humidity} %</Text>
         </View>
     </View>
 
