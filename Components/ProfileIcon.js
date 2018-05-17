@@ -16,9 +16,9 @@ const styles = StyleSheet.create({
         //backgroundColor: 'yellow'
     },
     image: {
-        width: 90, 
-        height: 90, 
-        borderRadius: 40
+        width: 120, 
+        height: 120, 
+        borderRadius: 60
     }
     
 });
