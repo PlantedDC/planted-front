@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#f1f9d2',
       alignItems: 'center',
       justifyContent: 'center',
-      width: 350,
+      alignSelf: 'stretch',
       marginBottom: 10, 
       flexDirection: 'row'
     },
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#f1f9d2',
         alignItems: 'center',
         justifyContent: 'center',
-        width: 350,
+        alignSelf: 'stretch',
         marginBottom: 10, 
         flexDirection: 'column'
     },

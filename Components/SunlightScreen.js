@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import { StyleSheet, Text, View, Button, FlatList } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import {SunlightDisplay} from './DataDisplay';
+import Chart from './Chart';
+import getDataArr from './helperFunctions/getDataArr';
 
 class SunlightScreenComponent extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -28,6 +30,10 @@ class SunlightScreenComponent extends Component {
         alignItems: 'center',
         justifyContent: 'center',
       },
+      dataContainer: {
+        alignSelf: 'stretch',
+        
+      }
     });
 
     let DisplayDataOnScreen = () => {
@@ -44,6 +50,7 @@ class SunlightScreenComponent extends Component {
     };
     return <View style={styles.container}>
       <Text style={styles.font}>Current Readings</Text>
+      <Chart data={getDataArr(plantData, 'sun').reverse()}/>      
       <DisplayDataOnScreen />
       </View>
   }
