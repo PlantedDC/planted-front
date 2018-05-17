@@ -1,8 +1,7 @@
 import React from 'react';
 import { StyleSheet, TextInput, Text, View, Button, Image, AsyncStorage, FlatList } from 'react-native';
 import { connect } from 'react-redux';
-// import Chart from './Chart';
-import ChartTemp from './ChartTemp';
+import Chart from './Chart';
 
 let getDataArr = (data, property) => {
     let arr = [];
@@ -56,15 +55,16 @@ class ProfileDataPart extends React.Component {
                 <Text style={styles.textBold}>Last 24 Hours:</Text>
                 { dataLast24Hours.data && 
                     <FlatList
+                        style={{alignSelf: 'stretch'}}
                         data={[
-                            {key: 'temp', title: 'Temperature:'}, 
-                            {key: 'sun', title: 'Sunlight:'}, 
-                            {key: 'moist', title: 'Soil Moisture:'}, 
-                            {key: 'humidity', title: 'Humidity'}]}
+                            {key: 'temp', title: 'Temperature: °C'}, 
+                            {key: 'sun', title: 'Sunlight: lx'}, 
+                            {key: 'moist', title: 'Soil Moisture: %'}, 
+                            {key: 'humidity', title: 'Humidity: %'}]}
                         renderItem={({item}) => 
-                            <View style={{width: 350}}>
-                                <Text>{item.title}</Text>
-                                <ChartTemp data={getDataArr(data, item.key)}/>
+                            <View style={{alignSelf: 'stretch'}}>
+                                <Text style={styles.text}>{item.title}</Text>
+                                <Chart data={getDataArr(data, item.key)}/>
                             </View>
                         }
                     />
@@ -95,13 +95,13 @@ const styles = StyleSheet.create({
         // justifyContent: 'center',
     },
     text: {
-        fontSize: 20,
-        margin: 5,
+        fontSize: 15,
+        margin: 0,
         textAlign: 'center',
     },
     textBold: {
         margin: 10,
-        fontSize: 20,
+        fontSize: 15,
         fontWeight: 'bold',
     }
 });

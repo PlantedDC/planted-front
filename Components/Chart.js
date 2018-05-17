@@ -4,16 +4,10 @@ import { View } from 'react-native'
 
 
 
-let ChartTemp = ({data}) => {
-
-
-    console.log('chart' ,data)
-    // console.log(props.data)
-    // const data = [ 50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80 ]
-
-        const axesSvg = { fontSize: 7, fill: 'grey' };
-        const verticalContentInset = { top: 7, bottom: 7 }
-        const xAxisHeight = 30
+let Chart = ({data}) => {
+        const axesSvg = { fontSize: 7, fill: 'green' };
+        const verticalContentInset = { top: 10, bottom: 10 }
+        const xAxisHeight = 0
 
         // Layout of an x-axis together with a y-axis is a problem that stems from flexbox.
         // All react-native-svg-charts components support full flexbox and therefore all
@@ -22,7 +16,7 @@ let ChartTemp = ({data}) => {
         // and then displace the other axis with just as many pixels. Simple but manual.
 
         return (
-            <View style={{ height: 150, padding: 20, flexDirection: 'row' }}>
+            <View style={{ height: 150, paddingLeft: 20, paddingRight: 20, flexDirection: 'row' }}>
                 <YAxis
                     data={data}
                     style={{ marginBottom: xAxisHeight }}
@@ -34,17 +28,10 @@ let ChartTemp = ({data}) => {
                         style={{ flex: 1 }}
                         data={data}
                         contentInset={verticalContentInset}
-                        svg={{ stroke: 'rgb(134, 65, 244)' }}
+                        svg={{ stroke: 'green' }}
                     >
                         <Grid/>
                     </LineChart>
-                    {/* <XAxis
-                        style={{ marginHorizontal: -10, height: xAxisHeight }}
-                        data={data}
-                        formatLabel={(value, index) => index}
-                        contentInset={{ left: 10, right: 10 }}
-                        svg={axesSvg}
-                    /> */}
                 </View>
             </View>
         )
@@ -54,5 +41,5 @@ let ChartTemp = ({data}) => {
 
         
 
-export default ChartTemp;
+export default Chart;
 

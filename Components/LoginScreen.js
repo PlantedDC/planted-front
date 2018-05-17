@@ -19,22 +19,22 @@ class LoginScreenDumb extends Component {
       }
     
     // testing mode/ delete after
-    componentDidMount() {
-        let {navigation, dispatch} = this.props;
-        let userEmail = 'test1@gmail.com';
-        let userPassword = '1111';
-        submitUserLoginInformation(userEmail, userPassword)
-            .then(async (res) => {
-                console.log(res)
-                if (res.status === 200) {
-                    res = await res.text();
-                    setTokenToAsyncStorage(res)
-                    dispatch(updateToken(res));
-                    dispatch(updateIsUserLoggedIn());
-                    navigation.navigate('Profile');
-                }
-            })
-    }
+    // componentDidMount() {
+    //     let {navigation, dispatch} = this.props;
+    //     let userEmail = 'test1@gmail.com';
+    //     let userPassword = '1111';
+    //     submitUserLoginInformation(userEmail, userPassword)
+    //         .then(async (res) => {
+    //             console.log(res)
+    //             if (res.status === 200) {
+    //                 res = await res.text();
+    //                 setTokenToAsyncStorage(res)
+    //                 dispatch(updateToken(res));
+    //                 dispatch(updateIsUserLoggedIn());
+    //                 navigation.navigate('Profile');
+    //             }
+    //         })
+    // }
 
     loginUser () {
         let {navigation, dispatch} = this.props;
@@ -49,7 +49,7 @@ class LoginScreenDumb extends Component {
                 dispatch(updateToken(res));
                 dispatch(updateIsUserLoggedIn());
                 this.setState({email: '', password: ''});
-                navigation.navigate('Home');
+                navigation.navigate('Profile');
             } else {
                 this.setState({email: '', password: '', failedToLogin: true});
             }
