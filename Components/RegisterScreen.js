@@ -131,7 +131,7 @@ class RegisterScreenDumb extends Component {
         </View>
         <TouchableOpacity 
             style={styles.button} 
-            onPress={() => this.loginUser()}
+            onPress={() => this.registerUser()}
         >   
             <Text style={styles.buttonFont}>Create Account</Text>
         </TouchableOpacity>
