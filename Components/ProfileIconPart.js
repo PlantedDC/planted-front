@@ -18,7 +18,7 @@ let ProfileIconPart = ({user, navigation}) =>
 
 const styles = StyleSheet.create({
     profileInfo: {
-        flex: 2,
+        flex: 1,
         alignSelf: 'stretch',
     },
 });
