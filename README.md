@@ -8,7 +8,7 @@ The Planted project purpose is to assist users by collecting data from a variety
 
 ## Team Members & Roles:
 * [Ashley Parker](https://github.com/codingandcaring) React Wizard|Developer
-* [Illia Chaban](https://github.com/illiaChaban) Backend|Datase|Chart Wizard|Developer
+* [Illia Chaban](https://github.com/illiaChaban) Backend|Database|Chart Wizard|Developer
 * [Nick Wilson](https://github.com/NickWilsonDev) Hardware/Electrician|Developer
 
 ## Technologies used:
