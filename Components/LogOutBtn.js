@@ -26,10 +26,12 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderColor: 'green',
         borderWidth: 2,
+        width: 85,
         
     },
     logoutBtn: {
         margin: 0,
+        width: 85,
     }
     
 });
