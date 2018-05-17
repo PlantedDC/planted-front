@@ -35,9 +35,7 @@ class HomeScreenComponent extends React.Component {
     const styles = StyleSheet.create({
       dataContainer: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: 350,
+        alignSelf: 'stretch',
       },
       container: {
         flex: 1,
@@ -56,7 +54,9 @@ class HomeScreenComponent extends React.Component {
         return <View><Text>Loading...</Text></View>
       } else {
         return <FlatList
+          style={styles.dataContainer}
           data={plantData}
+          keyExtractor={(item) => item.dataid.toString()}
           renderItem={({item}) => <DataDisplay data={item} />}
           />
       }

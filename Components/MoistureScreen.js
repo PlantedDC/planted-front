@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import { StyleSheet, Text, View, Button, FlatList } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import {MoistureDisplay} from './DataDisplay';
+import Chart from './Chart';
+import getDataArr from './helperFunctions/getDataArr';
 
 class MoistureScreenComponent extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -28,6 +30,9 @@ class MoistureScreenComponent extends Component {
         alignItems: 'center',
         justifyContent: 'center',
       },
+      dataContainer: {
+        alignSelf: 'stretch',        
+      }
     });
 
     let DisplayDataOnScreen = () => {
@@ -45,6 +50,7 @@ class MoistureScreenComponent extends Component {
 
     return <View style={styles.container}>
       <Text style={styles.font}>Current Readings</Text>
+      <Chart data={getDataArr(plantData, 'moist').reverse()}/>      
       <DisplayDataOnScreen />
       </View>
   }

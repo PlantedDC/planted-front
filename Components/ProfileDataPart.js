@@ -2,12 +2,9 @@ import React from 'react';
 import { StyleSheet, TextInput, Text, View, Button, Image, AsyncStorage, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import Chart from './Chart';
+import getDataArr from './helperFunctions/getDataArr';
 
-let getDataArr = (data, property) => {
-    let arr = [];
-    data && data.forEach( el => arr.push(el[property]))
-    return arr;
-}
+
 
 class ProfileDataPart extends React.Component {
     constructor(props){
