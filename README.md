@@ -4,6 +4,12 @@
 The Planted project purpose is to assist users by collecting data from a variety of sensors ex. humidity, temperature, sunlight, and soil moister.  This in hopes of helping users to keep their plants alive and thriving.
 Sensors send data to the server and the React Native app visualizes the data
 
+#### Github Links:
+[Planted Github |](https://github.com/PlantedDC)
+<a href="https://github.com/PlantedDC/planted-back"> Back End |</a>
+<a href="https://github.com/PlantedDC/hardware"> Hardware Side</a>
+
+
 #### Watch demo:
 
 <a href="https://youtu.be/lKG6Cvn-An0" target="_blank">
@@ -30,10 +36,6 @@ Sensors send data to the server and the React Native app visualizes the data
   
 </div>
 
-
-
-## Github Link:
-[Planted Github](https://github.com/PlantedDC/planted-front)
 
 ## Team Members & Roles:
 * [Ashley Parker](https://github.com/codingandcaring) React Wizard|Developer
