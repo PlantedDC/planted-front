@@ -6,7 +6,7 @@ Sensors send data to the server and the React Native app visualizes the data
 
 ### Watch demo:
 
-<a href="https://youtu.be/lKG6Cvn-An0">
+<a href="https://youtu.be/lKG6Cvn-An0" target="_blank">
   <img src="https://user-images.githubusercontent.com/34459770/40526186-c12a01d0-5fb2-11e8-8817-634b20ed2d6e.png" height="100"/>
 </a>
 
