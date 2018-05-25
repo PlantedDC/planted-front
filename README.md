@@ -2,6 +2,7 @@
 
 ## Overview:
 The Planted project purpose is to assist users by collecting data from a variety of sensors ex. humidity, temperature, sunlight, and soil moister.  This in hopes of helping the user to keep their plants alive and thriving.
+![hardware](https://user-images.githubusercontent.com/34459770/40523648-ae53b5fa-5fa4-11e8-90ee-90042c96d635.jpg)
 
 ## Github Link:
 [Planted Github](https://github.com/PlantedDC/planted-front)
