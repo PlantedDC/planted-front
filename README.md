@@ -16,11 +16,11 @@ Sensors send data to the server and the React Native app visualizes the data
 <br/>
 
 <div style=" display: flex; justify-content: space-between">
-  <img src="https://user-images.githubusercontent.com/34459770/40523781-49cfe166-5fa5-11e8-92e7-f10cd1fe21dd.jpg" width="150" border="5" style="margin: 10px;"/>
-  <img src="https://user-images.githubusercontent.com/34459770/40523784-4b9f7916-5fa5-11e8-8ce3-693efbe1f7f3.jpg" width="150" style="margin: 10px;"/>
-  <img src="https://user-images.githubusercontent.com/34459770/40523785-4d19c620-5fa5-11e8-86ac-b28ddf2796ca.jpg" width="150" style="margin: 10px;"/>
-  <img src="https://user-images.githubusercontent.com/34459770/40523786-4eb230f8-5fa5-11e8-8d4a-377df698907a.jpg" width="150" style="margin: 10px;"/>
-  <img src="https://user-images.githubusercontent.com/34459770/40523789-4fd75b84-5fa5-11e8-9682-8fdc51fa327b.jpg" width="150" style="margin: 10px; border: 2px solid black"/>
+  <img src="https://user-images.githubusercontent.com/34459770/40523781-49cfe166-5fa5-11e8-92e7-f10cd1fe21dd.jpg" width="150" border="5" style="margin: 50px;"/>
+  <img src="https://user-images.githubusercontent.com/34459770/40523784-4b9f7916-5fa5-11e8-8ce3-693efbe1f7f3.jpg" width="150" style="margin: 50px;"/>
+  <img src="https://user-images.githubusercontent.com/34459770/40523785-4d19c620-5fa5-11e8-86ac-b28ddf2796ca.jpg" width="150" style="margin: 50px;"/>
+  <img src="https://user-images.githubusercontent.com/34459770/40523786-4eb230f8-5fa5-11e8-8d4a-377df698907a.jpg" width="150" style="margin: 50px;"/>
+  <img src="https://user-images.githubusercontent.com/34459770/40523789-4fd75b84-5fa5-11e8-9682-8fdc51fa327b.jpg" width="150" style="margin: 50px; border: 2px solid black"/>
 </div>
 
 #### We took it to school!
