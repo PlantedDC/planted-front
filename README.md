@@ -1,7 +1,10 @@
 # Planted
 
 ## Overview:
-The Planted project purpose is to assist users by collecting data from a variety of sensors ex. humidity, temperature, sunlight, and soil moister.  This in hopes of helping the user to keep their plants alive and thriving.
+The Planted project purpose is to assist users by collecting data from a variety of sensors ex. humidity, temperature, sunlight, and soil moister.  This in hopes of helping users to keep their plants alive and thriving.
+Sensors send data to the server and the React Native app visualizes the data
+
+<br/>
 
 <div style=" display: flex; justify-content: space-between">
   <img src="https://user-images.githubusercontent.com/34459770/40523781-49cfe166-5fa5-11e8-92e7-f10cd1fe21dd.jpg" width="150" border="5" style="margin: 10px;"/>
@@ -29,11 +32,16 @@ The Planted project purpose is to assist users by collecting data from a variety
 * [Nick Wilson](https://github.com/NickWilsonDev) Hardware/Electrician|Developer
 
 ## Technologies used:
-### Languages:
-* JavaScript
-
-### Frameworks:
-* React-Native
+* React Native
+* React
+* Redux
+* D3
+* Node
+* GraphQL
+* PostgreSQL 
+* Javascript
+* Heroku
+* Python
 
 ## Code snippets:
 
