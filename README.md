@@ -4,13 +4,13 @@
 The Planted project purpose is to assist users by collecting data from a variety of sensors ex. humidity, temperature, sunlight, and soil moister.  This in hopes of helping users to keep their plants alive and thriving.
 Sensors send data to the server and the React Native app visualizes the data
 
-### Watch demo:
+#### Watch demo:
 
 <a href="https://youtu.be/lKG6Cvn-An0" target="_blank">
   <img src="https://user-images.githubusercontent.com/34459770/40526186-c12a01d0-5fb2-11e8-8817-634b20ed2d6e.png" height="100"/>
 </a>
 
-### Screenshots:
+#### Screenshots:
 
 
 <br/>
@@ -23,7 +23,7 @@ Sensors send data to the server and the React Native app visualizes the data
   <img src="https://user-images.githubusercontent.com/34459770/40523789-4fd75b84-5fa5-11e8-9682-8fdc51fa327b.jpg" width="150" style="margin: 10px; border: 2px solid black"/>
 </div>
 
-### We took it to school!
+#### We took it to school!
 <div>
   <img src="https://user-images.githubusercontent.com/34459770/40523648-ae53b5fa-5fa4-11e8-90ee-90042c96d635.jpg" width="255" style="margin: 10px;"/>
   <img src="https://user-images.githubusercontent.com/34459770/40524387-44a91fd8-5fa8-11e8-94d9-69d46daed6f3.png" width="300" margin='10'/>
