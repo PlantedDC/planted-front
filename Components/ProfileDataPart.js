@@ -15,7 +15,7 @@ class ProfileDataPart extends React.Component {
     }
 
     componentDidMount() {
-        fetch('https://radiant-anchorage-62389.herokuapp.com/graphql', {
+        fetch('https://planted-dc.herokuapp.com/graphql', {
             headers: {
                 "authorization": this.props.token,
             },

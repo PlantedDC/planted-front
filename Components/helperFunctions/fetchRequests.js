@@ -1,6 +1,6 @@
 
 export let getData = (token) => {
-    return (fetch('https://radiant-anchorage-62389.herokuapp.com/graphql', {
+    return (fetch('https://planted-dc.herokuapp.com/graphql', {
 	headers: {
 	    "authorization": token,
     },

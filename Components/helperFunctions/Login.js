@@ -8,7 +8,7 @@ export let setTokenToAsyncStorage = (token) => {
 
 export let submitUserLoginInformation = (email, password) => {
     let userInfo = JSON.stringify({"email":email, "password": password});
-    return(fetch("https://radiant-anchorage-62389.herokuapp.com/login", 
+    return(fetch("https://planted-dc.herokuapp.com/login", 
         {
             method: "POST",
             body: userInfo,
@@ -22,7 +22,7 @@ export let submitUserLoginInformation = (email, password) => {
 
 export let submitNewUserInformation = (email, password, username, avatar) => {
     let userInfo = JSON.stringify({"username": username, "email":email, "password": password, "avatar": avatar});
-    return fetch("https://radiant-anchorage-62389.herokuapp.com/register", 
+    return fetch("https://planted-dc.herokuapp.com/register", 
         {method: "POST",
             body: userInfo,
             headers: new Headers ({
